@@ -8,8 +8,6 @@ const loginService = async (email, password) => {
   if (!user) {
     throw new AppError("Invalid credentials", 401);
   }
-
-  // 🔥 Comparación directa (sin encriptación)
   if (user.password !== password) {
     throw new AppError("Invalid credentials", 401);
   }
